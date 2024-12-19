@@ -13,7 +13,7 @@ print "Enter target date (YYYY-MM-DD HH:MM:SS): "
 target_date_str = gets.chomp
 target_date = Time.parse(target_date_str)
 
-CountdownTimer::Timer.countdown_to(target_date) do |days, hours, minutes, seconds, ms|
+Countdown.countdown_to(target_date) do |days, hours, minutes, seconds, ms|
   print "\r#{days}d #{hours}h #{minutes}m #{seconds}s #{ms}ms"
 end
 ```

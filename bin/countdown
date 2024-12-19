@@ -20,7 +20,7 @@ begin
 
   target_date = parse_date(target_date_str)
 
-  Countdown::Timer.countdown_to(target_date) do |days, hours, minutes, seconds, ms|
+  Countdown.countdown_to(target_date) do |days, hours, minutes, seconds, ms|
     print "\r%03d days %02d:%02d:%02d:%03d" % [days, hours, minutes, seconds, ms]
   end
 rescue Interrupt
