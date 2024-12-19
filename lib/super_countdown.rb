@@ -1,8 +1,8 @@
 require 'date'
 require 'time'
-require 'countdown/version'
+require 'super_countdown/version'
 
-module Countdown
+module SuperCountdown
   def self.version
     VERSION
   end
