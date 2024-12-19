@@ -1,8 +1,8 @@
 require 'date'
 require 'time'
-require 'countdown_timer/version'
+require 'countdown/version'
 
-module CountdownTimer
+module Countdown
   class Timer
     def self.version
       VERSION

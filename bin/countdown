@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'countdown_timer'
+require 'countdown'
 require 'optparse'
 
 def parse_date(date_str)
@@ -20,7 +20,7 @@ begin
 
   target_date = parse_date(target_date_str)
 
-  CountdownTimer::Timer.countdown_to(target_date) do |days, hours, minutes, seconds, ms|
+  Countdown::Timer.countdown_to(target_date) do |days, hours, minutes, seconds, ms|
     print "\r%03d days %02d:%02d:%02d:%03d" % [days, hours, minutes, seconds, ms]
   end
 rescue Interrupt

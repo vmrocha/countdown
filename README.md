@@ -7,7 +7,7 @@ A simple Ruby gem that displays a countdown timer to a specified future date wit
 ## As a library
 
 ```ruby
-require 'countdown_timer'
+require 'countdown'
 
 print "Enter target date (YYYY-MM-DD HH:MM:SS): "
 target_date_str = gets.chomp

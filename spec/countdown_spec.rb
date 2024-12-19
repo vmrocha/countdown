@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe CountdownTimer::Timer do
+RSpec.describe Countdown::Timer do
   describe '.version' do
     it 'returns the current version' do
-      expect(described_class.version).to eq(CountdownTimer::VERSION)
+      expect(described_class.version).to eq(Countdown::VERSION)
     end
   end
 

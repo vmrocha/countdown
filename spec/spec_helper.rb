@@ -1,4 +1,4 @@
-require 'countdown_timer'
+require 'countdown'
 require 'timecop'
 
 RSpec.configure do |config|
