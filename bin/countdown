@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require 'countdown_timer'
+require 'optparse'
+
+def parse_date(date_str)
+  Time.parse(date_str)
+rescue ArgumentError
+  puts "Invalid date format. Please use: YYYY-MM-DD HH:MM:SS"
+  exit 1
+end
+
+begin
+  target_date_str = if ARGV.empty?
+    print "Enter target date (YYYY-MM-DD HH:MM:SS): "
+    gets.chomp
+  else
+    ARGV.join(' ')
+  end
+
+  target_date = parse_date(target_date_str)
+
+  CountdownTimer::Timer.countdown_to(target_date) do |days, hours, minutes, seconds, milliseconds|
+    # print "\r#{days}d #{hours}h #{minutes}m #{seconds}s #{milliseconds}ms"
+    print "\r%03d days %02d:%02d:%02d:%03d" % [days, hours, minutes, seconds, milliseconds]
+  end
+rescue Interrupt
+  puts "\nCountdown stopped."
+  exit 0
+end
